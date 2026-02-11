@@ -6,7 +6,7 @@
     <title>Flexible Grid/List Component</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -88,10 +88,8 @@
             gap: 24px;
             align-items: start;
             background-color: #FFFFFF;
-            border: 1px solid #E0E0E0;
-            border-radius: 10px;
-            padding: 20px;
             transition: box-shadow 0.2s;
+            overflow: hidden;
         }
 
         .flexible-grid.cols-1 .grid-item:hover {
@@ -102,7 +100,6 @@
             width: 200px;
             height: 112px;
             object-fit: cover;
-            border-radius: 6px;
         }
 
         .flexible-grid.cols-1 .item-content {
@@ -133,8 +130,6 @@
             display: flex;
             flex-direction: column;
             background-color: #FFFFFF;
-            border: 1px solid #E0E0E0;
-            border-radius: 10px;
             overflow: hidden;
             transition: box-shadow 0.2s, transform 0.2s;
         }
@@ -175,9 +170,11 @@
         }
 
         .item-summary {
-            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22px;
             color: #666666;
-            line-height: 1.5;
         }
 
         .item-link {
@@ -298,7 +295,7 @@
             <p><strong>4.</strong> Works with any number of items - add as many as needed</p>
         </div>
 
-        <h2 style="margin-bottom: 20px;">Editorial Grid Listing</h2>
+        <h2 style="margin-bottom: 20px; font-size: 29px; font-weight: 600; line-height: 40px;">Editorial Grid Listing</h2>
 
         <!-- Flexible Grid Component -->
         <div class="flexible-grid cols-1" id="flexibleGrid">
