@@ -230,23 +230,22 @@
         }
 
         .item-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: #0066CC;
+            display: inline-block;
+            text-align: center;
+            padding: 12px 24px;
+            background-color: #4472C4;
+            color: #FFFFFF;
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
             margin-top: auto;
+            border-radius: 6px;
+            transition: background-color 0.2s;
         }
 
         .item-link:hover {
-            text-decoration: underline;
-        }
-
-        .item-link::after {
-            content: '→';
-            font-size: 16px;
+            background-color: #365A9F;
+            text-decoration: none;
         }
 
         /* Hide links when toggle is off */
