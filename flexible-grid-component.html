@@ -243,6 +243,11 @@
             display: none;
         }
 
+        /* Hide summary when toggle is off */
+        .flexible-grid.hide-summary .item-summary {
+            display: none;
+        }
+
         /* Responsive Behavior */
         @media (max-width: 1024px) {
             .flexible-grid.cols-4 {
@@ -337,6 +342,9 @@
 
             <h2 style="margin-top: 20px;">CMS Control: Toggle Optional Links</h2>
             <button onclick="toggleLinks()" class="active" id="btn-toggle-links">Show Links</button>
+
+            <h2 style="margin-top: 20px;">CMS Control: Toggle Summary</h2>
+            <button onclick="toggleSummary()" class="active" id="btn-toggle-summary">Show Summary</button>
         </div>
 
         <!-- Implementation Info -->
@@ -511,6 +519,25 @@
                 grid.classList.add('hide-links');
                 grid.dataset.linksHidden = 'true';
                 toggleBtn.textContent = 'Hide Links';
+                toggleBtn.classList.remove('active');
+            }
+        }
+
+        function toggleSummary() {
+            const grid = document.getElementById('flexibleGrid');
+            const toggleBtn = document.getElementById('btn-toggle-summary');
+
+            if (grid.classList.contains('hide-summary')) {
+                // Show summary
+                grid.classList.remove('hide-summary');
+                grid.dataset.summaryHidden = 'false';
+                toggleBtn.textContent = 'Show Summary';
+                toggleBtn.classList.add('active');
+            } else {
+                // Hide summary
+                grid.classList.add('hide-summary');
+                grid.dataset.summaryHidden = 'true';
+                toggleBtn.textContent = 'Hide Summary';
                 toggleBtn.classList.remove('active');
             }
         }
