@@ -195,6 +195,40 @@
             color: rgb(0, 0, 0);
         }
 
+        /* Scale typography by column count */
+        /* 3 Columns - Slightly smaller */
+        .flexible-grid.cols-3 .item-heading {
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .flexible-grid.cols-3 .item-summary {
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        /* 4 Columns - Smaller */
+        .flexible-grid.cols-4 .item-heading {
+            font-size: 15px;
+            line-height: 22px;
+        }
+
+        .flexible-grid.cols-4 .item-summary {
+            font-size: 13px;
+            line-height: 19px;
+        }
+
+        /* 6 Columns - Smallest */
+        .flexible-grid.cols-6 .item-heading {
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .flexible-grid.cols-6 .item-summary {
+            font-size: 12px;
+            line-height: 17px;
+        }
+
         .item-link {
             display: inline-flex;
             align-items: center;
