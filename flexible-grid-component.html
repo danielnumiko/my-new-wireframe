@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flexible Grid/List Component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,7 +15,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background-color: #F5F5F5;
             padding: 40px 20px;
             line-height: 1.6;
@@ -195,6 +198,11 @@
             font-size: 16px;
         }
 
+        /* Hide links when toggle is off */
+        .flexible-grid.hide-links .item-link {
+            display: none;
+        }
+
         /* Responsive Behavior */
         @media (max-width: 1024px) {
             .flexible-grid.cols-4 {
@@ -268,6 +276,9 @@
             <button onclick="setColumns(2)" id="btn-2">2 Columns</button>
             <button onclick="setColumns(3)" id="btn-3">3 Columns</button>
             <button onclick="setColumns(4)" id="btn-4">4 Columns</button>
+
+            <h2 style="margin-top: 20px;">CMS Control: Toggle Optional Links</h2>
+            <button onclick="toggleLinks()" class="active" id="btn-toggle-links">Show Links</button>
         </div>
 
         <!-- Implementation Info -->
@@ -284,118 +295,118 @@
 
             <!-- Item 1 -->
             <div class="grid-item">
-                <img src="https://source.unsplash.com/400x300/?scotland,landscape,286" alt="Item 1" class="item-image">
+                <img src="https://source.unsplash.com/400x300/?scotland,landscape,286" alt="Isle of Skye" class="item-image">
                 <div class="item-content">
-                    <h3 class="item-heading">Advanced Machine Learning</h3>
-                    <p class="item-summary">Explore cutting-edge neural network architectures and deep learning techniques for real-world applications in computer vision and natural language processing.</p>
-                    <a href="#" class="item-link">Learn more</a>
+                    <h3 class="item-heading">Isle of Skye</h3>
+                    <p class="item-summary">Dramatic landscapes featuring the Old Man of Storr, fairy pools, and rugged coastlines. Experience mystical mountain ranges and ancient castles perched on clifftops.</p>
+                    <a href="#" class="item-link">Optional link</a>
                 </div>
             </div>
 
             <!-- Item 2 -->
             <div class="grid-item">
-                <img src="https://source.unsplash.com/400x300/?scotland,landscape,296" alt="Item 2" class="item-image">
+                <img src="https://source.unsplash.com/400x300/?scotland,landscape,296" alt="Loch Ness" class="item-image">
                 <div class="item-content">
-                    <h3 class="item-heading">Sustainable Energy Solutions</h3>
-                    <p class="item-summary">Research into renewable energy technologies including solar, wind, and emerging battery storage solutions for a carbon-neutral future.</p>
-                    <a href="#" class="item-link">Discover more</a>
+                    <h3 class="item-heading">Loch Ness</h3>
+                    <p class="item-summary">Scotland's most famous freshwater loch, surrounded by dense forests and rolling hills. Home to the legendary Loch Ness Monster and historic Urquhart Castle ruins.</p>
+                    <a href="#" class="item-link">Optional link</a>
                 </div>
             </div>
 
             <!-- Item 3 -->
             <div class="grid-item">
-                <img src="https://source.unsplash.com/400x300/?scotland,landscape,306" alt="Item 3" class="item-image">
+                <img src="https://source.unsplash.com/400x300/?scotland,landscape,306" alt="Edinburgh" class="item-image">
                 <div class="item-content">
-                    <h3 class="item-heading">Quantum Computing Research</h3>
-                    <p class="item-summary">Investigating quantum algorithms and hardware implementations that promise to revolutionize computing power and solve complex optimization problems.</p>
-                    <a href="#" class="item-link">View details</a>
+                    <h3 class="item-heading">Edinburgh</h3>
+                    <p class="item-summary">Scotland's capital city blends medieval and Georgian architecture. Discover Edinburgh Castle, the Royal Mile, and Arthur's Seat overlooking the historic city center.</p>
+                    <a href="#" class="item-link">Optional link</a>
                 </div>
             </div>
 
             <!-- Item 4 -->
             <div class="grid-item">
-                <img src="https://source.unsplash.com/400x300/?scotland,landscape,316" alt="Item 4" class="item-image">
+                <img src="https://source.unsplash.com/400x300/?scotland,landscape,316" alt="Glen Coe" class="item-image">
                 <div class="item-content">
-                    <h3 class="item-heading">Biomedical Engineering</h3>
-                    <p class="item-summary">Development of innovative medical devices and diagnostic tools that improve patient outcomes and advance healthcare delivery systems worldwide.</p>
+                    <h3 class="item-heading">Glen Coe</h3>
+                    <p class="item-summary">A breathtaking valley carved by ancient volcanoes and glaciers. Famous for dramatic mountain peaks, cascading waterfalls, and rich Highland history.</p>
                 </div>
             </div>
 
             <!-- Item 5 -->
             <div class="grid-item">
-                <img src="https://source.unsplash.com/400x300/?scotland,landscape,325" alt="Item 5" class="item-image">
+                <img src="https://source.unsplash.com/400x300/?scotland,landscape,325" alt="Scottish Highlands" class="item-image">
                 <div class="item-content">
-                    <h3 class="item-heading">Climate Change Analysis</h3>
-                    <p class="item-summary">Using advanced data modeling and satellite imagery to understand climate patterns and predict environmental changes with unprecedented accuracy.</p>
-                    <a href="#" class="item-link">Read more</a>
+                    <h3 class="item-heading">Scottish Highlands</h3>
+                    <p class="item-summary">Vast wilderness of heather-covered moorlands, pristine lochs, and towering mountains. Experience traditional Highland culture, remote villages, and stunning natural beauty.</p>
+                    <a href="#" class="item-link">Optional link</a>
                 </div>
             </div>
 
             <!-- Item 6 -->
             <div class="grid-item">
-                <img src="https://source.unsplash.com/400x300/?scotland,landscape,335" alt="Item 6" class="item-image">
+                <img src="https://source.unsplash.com/400x300/?scotland,landscape,335" alt="Stirling Castle" class="item-image">
                 <div class="item-content">
-                    <h3 class="item-heading">Urban Planning Innovation</h3>
-                    <p class="item-summary">Smart city technologies and sustainable urban development strategies that create livable, efficient, and environmentally conscious metropolitan areas.</p>
-                    <a href="#" class="item-link">Explore project</a>
+                    <h3 class="item-heading">Stirling Castle</h3>
+                    <p class="item-summary">One of Scotland's grandest castles with commanding views across the landscape. Rich in royal history and architectural splendor, standing guard over historic battlefields.</p>
+                    <a href="#" class="item-link">Optional link</a>
                 </div>
             </div>
 
             <!-- Item 7 -->
             <div class="grid-item">
-                <img src="https://source.unsplash.com/400x300/?scotland,landscape,345" alt="Item 7" class="item-image">
+                <img src="https://source.unsplash.com/400x300/?scotland,landscape,345" alt="Eilean Donan Castle" class="item-image">
                 <div class="item-content">
-                    <h3 class="item-heading">Artificial Intelligence Ethics</h3>
-                    <p class="item-summary">Examining the moral implications of AI systems and developing frameworks for responsible deployment of autonomous technologies in society.</p>
+                    <h3 class="item-heading">Eilean Donan Castle</h3>
+                    <p class="item-summary">Scotland's most photographed castle sits on a small tidal island. Connected to the mainland by a stone bridge, surrounded by dramatic mountain scenery and tranquil lochs.</p>
                 </div>
             </div>
 
             <!-- Item 8 -->
             <div class="grid-item">
-                <img src="https://source.unsplash.com/400x300/?scotland,landscape,354" alt="Item 8" class="item-image">
+                <img src="https://source.unsplash.com/400x300/?scotland,landscape,354" alt="Ben Nevis" class="item-image">
                 <div class="item-content">
-                    <h3 class="item-heading">Marine Biology Conservation</h3>
-                    <p class="item-summary">Protecting ocean ecosystems through research on marine species, coral reef restoration, and sustainable fishing practices for future generations.</p>
-                    <a href="#" class="item-link">Learn more</a>
+                    <h3 class="item-heading">Ben Nevis</h3>
+                    <p class="item-summary">Britain's highest mountain rises majestically near Fort William. Popular with hikers and climbers, offering spectacular views across the Highlands from its summit plateau.</p>
+                    <a href="#" class="item-link">Optional link</a>
                 </div>
             </div>
 
             <!-- Item 9 -->
             <div class="grid-item">
-                <img src="https://source.unsplash.com/400x300/?scotland,landscape,364" alt="Item 9" class="item-image">
+                <img src="https://source.unsplash.com/400x300/?scotland,landscape,364" alt="Orkney Islands" class="item-image">
                 <div class="item-content">
-                    <h3 class="item-heading">Space Exploration Technology</h3>
-                    <p class="item-summary">Developing next-generation spacecraft propulsion systems and life support technologies for long-duration missions to Mars and beyond.</p>
-                    <a href="#" class="item-link">View mission</a>
+                    <h3 class="item-heading">Orkney Islands</h3>
+                    <p class="item-summary">Remote archipelago rich in Neolithic sites and Norse heritage. Discover ancient stone circles, dramatic sea cliffs, and vibrant wildlife colonies in this windswept paradise.</p>
+                    <a href="#" class="item-link">Optional link</a>
                 </div>
             </div>
 
             <!-- Item 10 -->
             <div class="grid-item">
-                <img src="https://source.unsplash.com/400x300/?scotland,landscape,374" alt="Item 10" class="item-image">
+                <img src="https://source.unsplash.com/400x300/?scotland,landscape,374" alt="Cairngorms National Park" class="item-image">
                 <div class="item-content">
-                    <h3 class="item-heading">Cybersecurity Research</h3>
-                    <p class="item-summary">Advanced threat detection and prevention systems to protect critical infrastructure from evolving cyber attacks and data breaches.</p>
-                    <a href="#" class="item-link">Security details</a>
+                    <h3 class="item-heading">Cairngorms National Park</h3>
+                    <p class="item-summary">Britain's largest national park features ancient Caledonian forests, high mountain plateaus, and diverse wildlife. Home to Scottish wildcats, golden eagles, and red deer.</p>
+                    <a href="#" class="item-link">Optional link</a>
                 </div>
             </div>
 
             <!-- Item 11 -->
             <div class="grid-item">
-                <img src="https://source.unsplash.com/400x300/?scotland,landscape,384" alt="Item 11" class="item-image">
+                <img src="https://source.unsplash.com/400x300/?scotland,landscape,384" alt="Loch Lomond" class="item-image">
                 <div class="item-content">
-                    <h3 class="item-heading">Nanotechnology Applications</h3>
-                    <p class="item-summary">Manipulating matter at the atomic scale to create revolutionary materials with applications in medicine, electronics, and environmental remediation.</p>
+                    <h3 class="item-heading">Loch Lomond</h3>
+                    <p class="item-summary">Scotland's largest freshwater loch by surface area, dotted with picturesque islands. The surrounding Trossachs offer hiking trails, charming villages, and peaceful woodland walks.</p>
                 </div>
             </div>
 
             <!-- Item 12 -->
             <div class="grid-item">
-                <img src="https://source.unsplash.com/400x300/?scotland,landscape,393" alt="Item 12" class="item-image">
+                <img src="https://source.unsplash.com/400x300/?scotland,landscape,393" alt="The Trossachs" class="item-image">
                 <div class="item-content">
-                    <h3 class="item-heading">Digital Humanities</h3>
-                    <p class="item-summary">Applying computational methods to analyze historical texts, cultural artifacts, and social patterns to gain new insights into human civilization.</p>
-                    <a href="#" class="item-link">Explore research</a>
+                    <h3 class="item-heading">The Trossachs</h3>
+                    <p class="item-summary">Known as the Highlands in miniature, this area combines serene lochs with densely forested glens. Immortalized by Sir Walter Scott's romantic tales of Scottish history.</p>
+                    <a href="#" class="item-link">Optional link</a>
                 </div>
             </div>
 
@@ -413,11 +424,35 @@
             // Add the selected column class
             grid.classList.add('cols-' + num);
 
+            // Preserve hide-links class if active
+            if (grid.dataset.linksHidden === 'true') {
+                grid.classList.add('hide-links');
+            }
+
             // Update button active states
             document.querySelectorAll('.demo-controls button').forEach(btn => {
                 btn.classList.remove('active');
             });
             document.getElementById('btn-' + num).classList.add('active');
+        }
+
+        function toggleLinks() {
+            const grid = document.getElementById('flexibleGrid');
+            const toggleBtn = document.getElementById('btn-toggle-links');
+
+            if (grid.classList.contains('hide-links')) {
+                // Show links
+                grid.classList.remove('hide-links');
+                grid.dataset.linksHidden = 'false';
+                toggleBtn.textContent = 'Show Links';
+                toggleBtn.classList.add('active');
+            } else {
+                // Hide links
+                grid.classList.add('hide-links');
+                grid.dataset.linksHidden = 'true';
+                toggleBtn.textContent = 'Hide Links';
+                toggleBtn.classList.remove('active');
+            }
         }
     </script>
 </body>
