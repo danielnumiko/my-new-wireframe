@@ -98,7 +98,8 @@
 
         .flexible-grid.cols-1 .item-image {
             width: 200px;
-            height: 100%;
+            aspect-ratio: 1 / 1;
+            min-height: 100%;
             object-fit: cover;
             object-position: top center;
         }
@@ -125,10 +126,16 @@
             grid-template-columns: repeat(4, 1fr);
         }
 
-        /* Card Layout (2-4 columns) */
+        /* 6 Columns = Card Grid */
+        .flexible-grid.cols-6 {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        /* Card Layout (2-6 columns) */
         .flexible-grid.cols-2 .grid-item,
         .flexible-grid.cols-3 .grid-item,
-        .flexible-grid.cols-4 .grid-item {
+        .flexible-grid.cols-4 .grid-item,
+        .flexible-grid.cols-6 .grid-item {
             display: flex;
             flex-direction: column;
             background-color: #FFFFFF;
@@ -138,14 +145,16 @@
 
         .flexible-grid.cols-2 .grid-item:hover,
         .flexible-grid.cols-3 .grid-item:hover,
-        .flexible-grid.cols-4 .grid-item:hover {
+        .flexible-grid.cols-4 .grid-item:hover,
+        .flexible-grid.cols-6 .grid-item:hover {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transform: translateY(-2px);
         }
 
         .flexible-grid.cols-2 .item-image,
         .flexible-grid.cols-3 .item-image,
-        .flexible-grid.cols-4 .item-image {
+        .flexible-grid.cols-4 .item-image,
+        .flexible-grid.cols-6 .item-image {
             width: 100%;
             height: auto;
             aspect-ratio: 1 / 1;
@@ -155,7 +164,8 @@
 
         .flexible-grid.cols-2 .item-content,
         .flexible-grid.cols-3 .item-content,
-        .flexible-grid.cols-4 .item-content {
+        .flexible-grid.cols-4 .item-content,
+        .flexible-grid.cols-6 .item-content {
             padding: 30px;
             display: flex;
             flex-direction: column;
@@ -210,11 +220,16 @@
             .flexible-grid.cols-4 {
                 grid-template-columns: repeat(3, 1fr);
             }
+
+            .flexible-grid.cols-6 {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
             .flexible-grid.cols-3,
-            .flexible-grid.cols-4 {
+            .flexible-grid.cols-4,
+            .flexible-grid.cols-6 {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -233,7 +248,8 @@
         @media (max-width: 480px) {
             .flexible-grid.cols-2,
             .flexible-grid.cols-3,
-            .flexible-grid.cols-4 {
+            .flexible-grid.cols-4,
+            .flexible-grid.cols-6 {
                 grid-template-columns: 1fr;
             }
 
@@ -289,6 +305,7 @@
             <button onclick="setColumns(2)" id="btn-2">2 Columns</button>
             <button onclick="setColumns(3)" id="btn-3">3 Columns</button>
             <button onclick="setColumns(4)" id="btn-4">4 Columns</button>
+            <button onclick="setColumns(6)" id="btn-6">6 Columns</button>
 
             <h2 style="margin-top: 20px;">CMS Control: Toggle Optional Links</h2>
             <button onclick="toggleLinks()" class="active" id="btn-toggle-links">Show Links</button>
@@ -297,8 +314,8 @@
         <!-- Implementation Info -->
         <div class="info-box">
             <h3>How to implement in your CMS:</h3>
-            <p><strong>1.</strong> Add a dropdown field: "Column Layout" with options: 1, 2, 3, 4</p>
-            <p><strong>2.</strong> Apply class to the container: <code>cols-1</code>, <code>cols-2</code>, <code>cols-3</code>, or <code>cols-4</code></p>
+            <p><strong>1.</strong> Add a dropdown field: "Column Layout" with options: 1, 2, 3, 4, 6</p>
+            <p><strong>2.</strong> Apply class to the container: <code>cols-1</code>, <code>cols-2</code>, <code>cols-3</code>, <code>cols-4</code>, or <code>cols-6</code></p>
             <p><strong>3.</strong> Each item has: <strong>image</strong> (mandatory), <strong>heading</strong> (mandatory), <strong>summary</strong> (optional), <strong>link</strong> (optional)</p>
             <p><strong>4.</strong> Works with any number of items - add as many as needed</p>
         </div>
